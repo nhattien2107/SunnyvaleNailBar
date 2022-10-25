@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @*FONT GOOGLE*@
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Rampart+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="id01" class="modal" role="dialog">
+        <div class="modal-dialog modal-xm" >
+            <div class="modal-content" id="bg-img">
+                <div class="modal-header" style="border: 0;">
+                    <h3 style="margin: 0 0; width: 100%; text-align: center; color: white; font-family: 'Rampart One', cursive; "> <span>FIRST TIME HERE?</span></h3>
+                    <h1 style="margin: 0 0; width: 100%; text-align: center; color: white; font-family: 'Berkshire Swash', cursive;"> <span>Get 5$ OFF</span></h1>
+                </div>
+                <div class="modal-body">
+                    <div class="row m-0">                        
+                        <div class="col-md-12 form-group">
+                            <input id="sign-in-info" name="sign-in-info" class="form-control" placeholder="Enter Your Email or Phone Number Here"/>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="submit" onclick="SaveInfo()" name="SendMeACoupon" value="SEND ME A COUPON" id="send-coupon"/>
+                        </div>
+                    </div>
+                </div>
+            </div> @*modal-content*@
+        </div> @*modal-dialog modal-xm*@
+    </div> @*id01*@
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('#id01').modal('show');            
+        })
+    </script>
+</body>
+</html>

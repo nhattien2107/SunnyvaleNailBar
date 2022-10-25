@@ -1,0 +1,51 @@
+﻿/*  font-family: 'Alfa Slab One', cursive;
+            font-family: 'Bungee', cursive;
+            font-family: 'Dancing Script', cursive;
+            font-family: 'Lobster', cursive;
+            font-family: 'Play', sans-serif;
+            font-family: 'Source Code Pro', monospace; */
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+#bg-img {
+    background-image: url(img/DSC_3736-scaled.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#sign-in-info {
+    margin: 0 auto;
+    height: 50px;
+    font-size: 1.3rem;
+    width: 50%;
+}
+
+#send-coupon {
+    height: 50px;
+    width: 200px;
+    font-size: 1.2rem;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    font-family: 'Rampart One', cursive;
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 15%;
+    }
+}

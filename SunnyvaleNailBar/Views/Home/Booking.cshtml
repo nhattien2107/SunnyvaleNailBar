@@ -1,0 +1,254 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+}
+
+
+<link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+<div id="hb-innerbanner" class="hb-innerbanner hb-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="hb-innerbanner-area service">
+                    <div class="hb-bannarheading">
+                        <h1>Booking</h1>
+                    </div>
+                    <ul class="hb-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Booking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="hb-blog" class="hb-blog hb-sectionspace hb-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 pull-right">
+                <div class="hb-formarea">
+                    <div class="hb-form-heading">
+                        <center>
+                            <h2>Book Appointment<br>5 off for make online appointment all services</h2>
+                        </center>
+                    </div>
+                    <div class="hb-description">
+                        <p class="thin">
+                            Please book appointment online at least 2 hours in advance. If you
+                            in a hurry, please call (972) 546-8020 for availability.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <form id="form" action="process.html" name="form" method="post"
+                              class="hb-formtheme hb-commentform" role="form">
+                            <div id="errorBox"></div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="CustomerName" name="name" required autofocus
+                                           value="" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="PhoneNumber" name="phone" required
+                                           value="" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" name="email" id="Email"
+                                           placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownList("FirstVisit",
+                                                       (IEnumerable<SelectListItem>)ViewBag.FirstVisit, 
+                                                       new { @class = "form-control", required = "required" })
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input id="datepicker" class="form-control" type="text" name="date"
+                                           placeholder="Date" required>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownList("Time",
+                                                       (IEnumerable<SelectListItem>)ViewBag.Time,
+                                                       new { @class = "form-control", required = "required" })                                    
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownList("Service1",
+                                                       (IEnumerable<SelectListItem>)ViewBag.Service1,
+                                                       new { @class = "form-control", required = "required" })                                    
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="QuantityService1" name="Quantity" required 
+                                           value="" placeholder="Quantity For Service 1" >
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownList("Service2",
+                                                       (IEnumerable<SelectListItem>)ViewBag.Service2,
+                                                       new { @class = "form-control"})
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="QuantityService2" name="Quantity" 
+                                           value="" placeholder="Quantity For Service 2">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    @Html.DropDownList("Service3",
+                                                       (IEnumerable<SelectListItem>)ViewBag.Service3,
+                                                       new { @class = "form-control"})
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="QuantityService3" name="Quantity" 
+                                           value="" placeholder="Quantity For Service 3">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="3" name="comment" id="Comment"
+                                              placeholder="Message &amp; special request. For "></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input name="math" type="tel" class="form-control"
+                                           placeholder="10 + 10 = ?" />
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <button type="button" class="hb-btn" onClick=" Submit()"
+                                            id="submit_btn">
+                                        BOOK IT
+                                    </button> <span id="errorBox2"> </span> <span id="spinner" style="display:none;">
+                                        <i class="fa fa-spinner fa-spin"></i> Please Wait...
+                                    </span>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 pull-left">
+                <aside id="hb-sidebar" class="hb-sidebar hb-haslayout">
+                    <div class="hb-widget hb-categories hb-categories2">
+                        <div class="hb-widgettitle">
+                            <h3>Business Hours</h3>
+                        </div>
+                        <ul>
+                            <li>Mon <span>9:30AM - 7:30PM</span></li>
+                            <li>Tue <span>9:30AM - 7:30PM</span></li>
+                            <li>Wed <span>9:30AM - 7:30PM</span></li>
+                            <li>Thu <span>9:30AM - 7:30PM</span></li>
+                            <li>Fri <span>9:30AM - 7:30PM</span></li>
+                            <li>Sat <span>9:30AM - 7PM</span></li>
+                            <li>Sun <span>11AM - 6PM</span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">   
+    function Submit() {
+        $('#submit_btn').attr("disabled", true);
+        
+        var Name = $('#CustomerName').val();
+        var Phone = $('#PhoneNumber').val();
+        var Email = $('#Email').val();
+        var QuantityService1 = $('#QuantityService1').val();
+        var QuantityService2 = $('#QuantityService2').val();
+        var QuantityService3 = $('#QuantityService3').val();
+        var Date = $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' }).val();
+        var FirstVisit = $("#FirstVisit option:selected").val();
+        var Time = $("#Time option:selected").val();
+        var Service1 = $("#Service1 option:selected").val();
+        var Service2 = $("#Service2 option:selected").val();
+        var Service3 = $("#Service3 option:selected").val();
+        var Comment = $('#Comment').val();
+
+        if (FirstVisit == "0" || FirstVisit == null) {
+            Swal.fire(
+                '',
+                "Please Choose First Visit.",
+                'error')
+            return;
+        }
+        if (Time == "0" || Time == null) {
+            Swal.fire(
+                '',
+                "Please Choose Time.",
+                'error')
+            return;
+        }
+        if (Service1 == "0" || Service1 == null) {
+            Swal.fire(
+                '',
+                "Please Choose Service 1.",
+                'error')
+            return;
+        }
+        
+        $.ajax({
+            url: "/Booking/Booking",
+            type: "POST",
+            data: {
+                Name: Name,
+                Phone: Phone,
+                Email: Email,
+                Date: Date,
+                FirstVisit: FirstVisit,
+                Time: Time,
+                Service1: Service1,
+                Service2: Service2,
+                Service3: Service3,
+                QuantityService1: QuantityService1,
+                QuantityService2: QuantityService2,
+                QuantityService3: QuantityService3,
+                Comment: Comment,
+            },
+            success: function (data) {
+                $('#submit_btn').removeAttr("disabled");
+                if (data.Error) {
+                    Swal.fire(
+                        '',
+                        data.Title,
+                        'error')
+                    return;
+                }
+                else {
+                    swal.fire({
+                        icon: 'success',
+                        title: 'Lưu Thành Công',
+                        text: data.Title
+                    });
+                }
+            }
+        });
+    }
+</script>

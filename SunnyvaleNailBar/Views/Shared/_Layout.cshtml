@@ -2,18 +2,32 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name=”format-detection” content=”telephone =no”>
+    <meta name="keywords"
+          content="nail salon Sunnyvale ca, nail salons 76039, best nail salons Santa Clara ca, nail salon near me, nail salons Santa Clara">
+    <meta name="description"
+          content="Sunnyvale Nail Bar salon provides the best quality in nail services in Santa Clara, CA. Our highly trained nail technicians are best at dipping powder nails, manicure, pedicure.">
+
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/img/favicon.png" type="~/Content/img/x-icon" rel="shortcut icon">
+
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <link rel="stylesheet" href="~/Content/css/plugin.css">
+    <link rel="stylesheet" href="~/Content/css/fontawesome.css">
+    <link rel="stylesheet" href="~/Content/css/iconfont.css">
+    <link rel="stylesheet" href="~/Content/css/color.css">
+
     @Scripts.Render("~/bundles/modernizr")
 
-    @*FONT GOOGLE*@
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Rampart+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/189fa9baa5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div id="id01" class="modal" role="dialog">
+    <!--<div id="id01" class="modal" role="dialog">
         <div class="modal-dialog modal-xm" >
             <div class="modal-content" id="bg-img">
                 <div class="modal-header" style="border: 0;">
@@ -21,7 +35,7 @@
                     <h1 style="margin: 0 0; width: 100%; text-align: center; color: white; font-family: 'Berkshire Swash', cursive;"> <span>Get 5$ OFF</span></h1>
                 </div>
                 <div class="modal-body">
-                    <div class="row m-0">                        
+                    <div class="row m-0">
                         <div class="col-md-12 form-group">
                             <input id="sign-in-info" name="sign-in-info" class="form-control" placeholder="Enter Your Email or Phone Number Here"/>
                         </div>
@@ -30,20 +44,259 @@
                         </div>
                     </div>
                 </div>
-            </div> @*modal-content*@
-        </div> @*modal-dialog modal-xm*@
-    </div> @*id01*@
-    <div class="container body-content">
-        @RenderBody()
+            </div>-->
+    @*modal-content*@
+    <!--</div>--> @*modal-dialog modal-xm*@
+    <!--</div>--> @*id01*@
+
+    <div id="hb-wrapper" class="hb-wrapper hb-haslayout">
+        <!-- -------------------- -->
+        <!-- START HEADER -->
+        <header id="hb-header" class="hb-header hb-haslayout">
+            <div class="hb-topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="hb-info-area">
+                                <ul class="list-unstyled hb-info">
+                                    <li><a href="tel:9725468020"><i class="fa fa-phone"></i>(972) 546-8020</a></li>
+                                </ul>
+                            </div>
+                            <div class="hb-socialicons-area">
+                                <span class="hb-timeandday">3600 Gus Thomasson Rd #103, Mesquite, TX 75150</span>
+                                <ul class="hb-socialicons hb-withoutbackground list-unstyled">
+                                    <li>
+                                        <a href="https://facebook.com/Sunnyvalenailbar-mesquite" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/Sunnyvalenailbar_mesquite" target="_blank">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hb-navigationarea">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <strong class="hb-logo">
+                                <a href="@Url.Action("Index", "Home")">
+                                    <img src="~/Content/img/logo.jpg"
+                                         alt="nail salon">
+                                </a>
+                            </strong>
+                            <div class="hb-addnav">
+                                <div class="hb-cartarea">
+                                    <a href="@Url.Action("Booking", "Home")">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <nav id="hb-nav" class="hb-nav">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#hb-navigation" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div id="hb-navigation" class="collapse navbar-collapse hb-navigation">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                        <li><a href="@Url.Action("Services", "Home")">Services</a></li>
+                                        <li><a href="@Url.Action("Specials", "Home")">Specials</a></li>
+                                        <li><a href="@Url.Action("Booking", "Home")">Appointment</a></li>
+                                        <li><a href="@Url.Action("Direction", "Home")">Directions</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER -->
+        <!-- -------------------- -->
+        <!-- -------------------- -->
+        <!-- START MAIN-CONTAINER -->
+        <main id="hb-main" class="hb-main hb-haslayout">
+            @RenderBody()
+        </main>
+
+        <footer id="hb-footer" class="hb-footer hb-haslayout">
+            <div class="hb-footer-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="hb-col">
+                                <div class="hb-logo">
+                                    <a href="@Url.Action("Index", "Home")" style="color: #701325">Sunnyvale Nail Bar</a>
+                                </div>
+                                <div class="hb-address">
+                                    <span class="hb-timeandday">3600 Gus Thomasson Rd #103, Mesquite, TX 75150</span>
+                                    <span class="hb-timeandday">(972) 546-8020</span>
+                                    <ul class="list-unstyled hb-socialicons">
+                                        <li>
+                                            <a href="https://facebook.com/Sunnyvalenailbar-mesquite" target="_blank">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://instagram.com/Sunnyvalenailbar_mesquite" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="hb-col">
+                                <h3>Hours</h3>
+                                <ul class="list-unstyled hb-info">
+                                    <li>
+                                        <span><em>Mon - Fri: 9:30AM - 7:30PM</em></span><span>
+                                            <em>
+                                                Sat: 9AM-
+                                                7PM
+                                            </em>
+                                        </span><span><em>Sun: 11AM - 6PM</em></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="hb-col">
+                                <h3>Links</h3>
+                                <ul class="menu-foot">
+                                    <li class=""><a href="@Url.Action("Index", "Home")">Home</a></li>
+                                    <li class=""><a href="@Url.Action("Services", "Home")">Services</a></li>
+                                    <li class=""><a href="@Url.Action("Specials", "Home")">Specials</a></li>
+                                    <li class=""><a href="@Url.Action("Booking", "Home")">Book</a></li>
+                                    <li class=""><a href="@Url.Action("Direction", "Home")">Direction</a></li>
+                                    <li class=""><a href="tel:9725468020">Call Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="hb-col">
+                                <h3>Like & Share</h3>
+                                <div class="fb-like" data-href="https://www.facebook.com/Sunnyvalenailbar-mesquite"
+                                     data-layout="button_count" data-action="like" data-size="large"
+                                     data-show-faces="true" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hb-footerbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <span class="hb-copyright">Copyright © 2018 Sunnyvale Nail Bar</span>
+                            <ul class="list-unstyled hb-footernav">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        Designed By Chae Noran
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <span id="back-top" class="text-center rounded-circle fa fa-angle-up"></span>
+        <div id="loader" class="loader-holder">
+            <div class="block">
+                <div class="dot white"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
     </div>
+    <!-- END MAIN-CONTAINER -->
+    <!-- -------------------- -->
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Content/js/jquery-ui.js"></script>
+    @*<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>*@
+    <script src="~/Content/js/isotope.pkgd.js"></script>
+    <script src="~/Content/js/isotop.js"></script>
+    <script src="~/Content/js/countTo.js"></script>
+    <script src="~/Content/js/appear.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#id01').modal('show');            
-        })
+
+        collapseMenu();
+        function collapseMenu() {
+            jQuery('.hb-navigation ul li.menu-item-has-children, .hb-navigation ul li.menu-item-has-mega-menu')
+                    /*.prepend('<span class="hb-dropdowarrow"><i class="fa fa-angle-down"></i></span>')*/;
+            jQuery('.hb-navigation ul li.menu-item-has-children, .hb-navigation ul li.menu-item-has-mega-menu ').on('click', function () {
+                jQuery(this).toggleClass('hb-open');
+                jQuery(this).children('.sub-menu').slideToggle(300);
+            });
+        }
+
+        initAddClass();
+        // Add Class  init
+        function initAddClass() {
+            "use strict";
+
+            jQuery('.search-opener, .close-btn').on("click", function (e) {
+                e.preventDefault();
+                jQuery("body").toggleClass("search-active");
+            });
+            jQuery('.pre-opener').on("click", function (e) {
+                e.preventDefault();
+                jQuery("body").toggleClass("pre-active");
+            });
+        }
+
+        initbackTop();
+        // backtop init
+        function initbackTop() {
+            "use strict";
+
+            var jQuerybackToTop = jQuery("#back-top");
+            jQuery(window).on('scroll', function () {
+                if (jQuery(this).scrollTop() > 100) {
+                    jQuerybackToTop.addClass('active');
+                } else {
+                    jQuerybackToTop.removeClass('active');
+                }
+            });
+            jQuerybackToTop.on('click', function (e) {
+                jQuery("html, body").animate({ scrollTop: 0 }, 900);
+            });
+        }
+
+        initPreLoader()
+        // PreLoader init
+        function initPreLoader() {
+            "use strict";
+
+            jQuery('#loader').delay(1000).fadeOut();
+        }
+
+        var date = $('#datepicker').datepicker({ dateFormat: 'dd/mm/yy' }).val();
+        jQuery(function () {
+            jQuery("#datepicker").datepicker();
+        });
     </script>
+    @Scripts.Render("~/bundles/bootstrap")
+
+
 </body>
 </html>
